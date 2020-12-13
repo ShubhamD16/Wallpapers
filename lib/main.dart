@@ -62,7 +62,7 @@ class _HomeState extends State<Home> {
         children: [
           Positioned.fill(
             child: Container(
-                child: Image.asset('asset/black_background1.jpg',fit: BoxFit.fill,)
+                child: Image.asset('asset/brickback.jpg',fit: BoxFit.cover,)
             ),
           ),
           Scaffold(
