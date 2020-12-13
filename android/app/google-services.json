@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "242236225084",
+    "firebase_url": "https://wallpapers-1e637.firebaseio.com",
+    "project_id": "wallpapers-1e637",
+    "storage_bucket": "wallpapers-1e637.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242236225084:android:744fb4bac606b1843df539",
+        "android_client_info": {
+          "package_name": "com.thinknext.wall_f"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242236225084-qeki8muklbt1p9hmh2to2pm60cuc9u9n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS8tRlANydO9m7zrw_hzAG-6_5c0OISiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242236225084-qeki8muklbt1p9hmh2to2pm60cuc9u9n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
