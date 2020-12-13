@@ -57,45 +57,12 @@ class _HomeState extends State<Home> {
       'nature',
       'cartoon'
     ];
-    int i = 0;
-    int loaded = 0;
-    List<Widget> catlist = [];
-    for(i=0; i<categories.length;i++) {
-      if (i % 2 == 0 && i > 0) {
-        Widget ad = FacebookNativeAd(
-          placementId: "811863856044159_811882499375628",
-          adType: NativeAdType.NATIVE_AD,
-          keepAlive: true,
-          width: double.infinity,
-          height: 300,
-          backgroundColor: Colors.blue,
-          titleColor: Colors.white,
-          descriptionColor: Colors.white,
-          buttonColor: Colors.deepPurple,
-          buttonTitleColor: Colors.white,
-          buttonBorderColor: Colors.white,
-          listener: (result, value) {
-            print("Native Ad: $result --> $value");
-            print('loaded $loaded');
-            loaded += 1;
-          },
-          keepExpandedWhileLoading: true,
-          expandAnimationDuraion: 500,
-        );
-          catlist.add(ad);
-      }
-      else{
-        catlist.add(FirebaseSliderGetDataByCategory(category: categories[i],));
-      }
-    }
-
-
     return Container(
       child: Stack(
         children: [
           Positioned.fill(
             child: Container(
-                child: Image.asset('asset/block_black_background.jpg',fit: BoxFit.fill,)
+                child: Image.asset('asset/black_background1.jpg',fit: BoxFit.fill,)
             ),
           ),
           Scaffold(
@@ -107,8 +74,38 @@ class _HomeState extends State<Home> {
             ),
             body: Container(
               color: Colors.transparent,
-              child: ListView(
-                children: catlist,
+              child: ListView.separated(
+                itemCount: categories.length,
+                itemBuilder: (BuildContext context,int index){
+                  return FirebaseSliderGetDataByCategory(category: categories[index]);
+                },
+                separatorBuilder: (context,index){
+                  if(index%4 == 0){
+                    print('nattttttttttttttttttt');
+                    return FacebookNativeAd(
+                      placementId: "811863856044159_811888886041656",
+                      adType: NativeAdType.NATIVE_BANNER_AD,
+                      width: double.infinity,
+                      height: 150,
+                      bannerAdSize: NativeBannerAdSize.HEIGHT_120,
+                      keepAlive: true,
+                      backgroundColor: Colors.blue,
+                      titleColor: Colors.white,
+                      descriptionColor: Colors.white,
+                      buttonColor: Colors.deepPurple,
+                      buttonTitleColor: Colors.white,
+                      buttonBorderColor: Colors.white,
+                      listener: (result, value) {
+                        print("Native Ad: $result --> $value");
+                      },
+                      keepExpandedWhileLoading: false,
+                      expandAnimationDuraion: 500,
+                    );
+                  }
+                  else{
+                    return SizedBox(height: 2,);
+                  }
+                },
               )
               ),
           )

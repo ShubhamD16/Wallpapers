@@ -59,11 +59,11 @@ Widget CategoryImages(BuildContext context,String category, List imageUrl){
           child: Swiper(
             itemBuilder: (BuildContext context,int index){
               if(imageUrl[index] == 'ad'){
-                return FacebookNativeAd(
-                  placementId: "811863856044159_811882499375628",
-                  adType: NativeAdType.NATIVE_AD,
+                Widget ad = FacebookNativeAd(
+                  placementId: "811863856044159_811888886041656",
+                  adType: NativeAdType.NATIVE_BANNER_AD,
                   width: 200,
-                  height: 300,
+                  height: 100,
                   keepAlive: true,
                   isMediaCover: true,
                   backgroundColor: Colors.lightBlue,
@@ -77,6 +77,13 @@ Widget CategoryImages(BuildContext context,String category, List imageUrl){
                   },
                   keepExpandedWhileLoading: false,
                   expandAnimationDuraion: 500,
+                );
+                return Column(
+                  children: [
+                    ad,
+                    ad,
+                    ad,
+                  ],
                 );
               }
               else{
@@ -157,6 +164,7 @@ Widget AllImagesStaggred(BuildContext context,String category,List imageurl){
                 adType: NativeAdType.NATIVE_AD,
                 width: 200,
                 height: 300,
+                keepAlive: true,
                 backgroundColor: Colors.blue,
                 titleColor: Colors.white,
                 descriptionColor: Colors.white,
