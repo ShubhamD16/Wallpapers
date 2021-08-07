@@ -1,6 +1,7 @@
-# wall_f
+# WALLPAPER APP
 
-A new Flutter application.
+This a wallpaper app for Android and IOS with firebase as database. Also Google AdMob and Facebook Ad are shown depending on which is available.
+
 
 ## Getting Started
 
